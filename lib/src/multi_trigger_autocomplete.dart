@@ -205,7 +205,7 @@ class MultiTriggerAutocompleteState extends State<MultiTriggerAutocomplete> {
   String _lastFieldText = '';
 
   // True if the state indicates that the options should be visible.
-  bool get _shouldShowOptions {
+  bool get shouldShowOptions {
     return !_hideOptions &&
         _focusNode.hasFocus &&
         _currentQuery != null &&
@@ -415,7 +415,6 @@ class MultiTriggerAutocompleteState extends State<MultiTriggerAutocomplete> {
         final anchor = widget.optionsAlignment._toAnchor(
           widthFactor: widget.optionsWidthFactor,
         );
-        final shouldShowOptions = _shouldShowOptions;
         final optionViewBuilder = shouldShowOptions
             ? _currentTrigger!.optionsViewBuilder(
                 context,
